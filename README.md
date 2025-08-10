@@ -1,4 +1,4 @@
-# 个人AI汉化版 | Explorer Tab Utility 文件资源管理器标签工具
+# 个人AI汉化版，有部分界面没有汉化成功 | Explorer Tab Utility 文件资源管理器标签工具
 
 > [!TIP]
 > 强制让Windows 11的新文件资源管理器窗口以标签页形式打开，让您的工作流程更清爽有序！
