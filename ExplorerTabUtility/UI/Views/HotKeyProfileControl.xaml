@@ -20,7 +20,7 @@
                 <RowDefinition Height="Auto" />
             </Grid.RowDefinitions>
 
-            <!-- Main Row -->
+            <!-- 主行 -->
             <Grid Grid.Row="0">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="Auto" />
@@ -34,32 +34,32 @@
                     <ColumnDefinition Width="Auto" />
                 </Grid.ColumnDefinitions>
 
-                <!-- Enabled Toggle -->
+                <!-- 启用开关 -->
                 <ToggleButton x:Name="CbEnabled" Grid.Column="0" Style="{StaticResource ToggleButtonStyle}"
-                              VerticalAlignment="Stretch" ToolTip="Enable or disable this profile" />
+                              VerticalAlignment="Stretch" ToolTip="启用或禁用此配置文件" />
 
-                <!-- Name -->
-                <TextBox x:Name="TxtName" Grid.Column="1" Tag="Name" Style="{StaticResource CustomTextBoxStyle}"
-                         ToolTip="Name of the profile" />
+                <!-- 名称 -->
+                <TextBox x:Name="TxtName" Grid.Column="1" Tag="名称" Style="{StaticResource CustomTextBoxStyle}"
+                         ToolTip="配置文件的名称" />
 
-                <!-- Hotkeys -->
-                <TextBox x:Name="TxtHotKeys" Grid.Column="3" Tag="Hotkeys" Style="{StaticResource CustomTextBoxStyle}"
-                         ToolTip="Keyboard or mouse keys to listen for. Click to record a new key combination." />
+                <!-- 热键 -->
+                <TextBox x:Name="TxtHotKeys" Grid.Column="3" Tag="热键" Style="{StaticResource CustomTextBoxStyle}"
+                         ToolTip="要监听的键盘或鼠标按键。点击录制新的按键组合" />
 
-                <!-- Scope -->
+                <!-- 作用范围 -->
                 <ComboBox x:Name="CbScope" Grid.Column="5" Style="{StaticResource CustomComboBoxStyle}"
-                          ToolTip="Scope of the hotkeys: Global (anywhere) or only when File Explorer is focused" />
+                          ToolTip="热键作用范围：全局（任意位置）或仅在文件资源管理器聚焦时" />
 
-                <!-- Action -->
+                <!-- 操作 -->
                 <ComboBox x:Name="CbAction" Grid.Column="6" Style="{StaticResource CustomComboBoxStyle}" Width="150"
-                          ToolTip="Action to perform when the hotkeys are pressed" />
+                          ToolTip="按下热键时要执行的操作" />
 
-                <!-- Expander button -->
+                <!-- 展开按钮 -->
                 <ToggleButton x:Name="ExpanderToggle" Grid.Column="7" Margin="4, 0" Style="{StaticResource ToggleButtonArrowStyle}"
-                              ToolTip="Show more options" />
+                              ToolTip="显示更多选项" />
 
-                <!-- Delete Button -->
-                <Button x:Name="BtnDelete" Grid.Column="8" ToolTip="Delete this profile">
+                <!-- 删除按钮 -->
+                <Button x:Name="BtnDelete" Grid.Column="8" ToolTip="删除此配置文件">
                     <Path Data="M19,4H15.5L14.5,3H9.5L8.5,4H5V6H19M6,19A2,2 0 0,0 8,21H16A2,2 0 0,0 18,19V7H6V19Z"
                           Fill="{Binding Foreground, RelativeSource={RelativeSource AncestorType=Button}}" Stretch="Uniform" Width="16"
                           Height="16" />
@@ -75,7 +75,7 @@
                 </Button>
             </Grid>
 
-            <!-- Expanded Details -->
+            <!-- 扩展详情 -->
             <Grid x:Name="ExpandedPanel" Grid.Row="1" Margin="0, 6, 0, 0"
                   Visibility="{Binding ElementName=ExpanderToggle, Path=IsChecked, Mode=TwoWay, Converter={StaticResource BoolToVis}}">
                 <Grid.ColumnDefinitions>
@@ -86,15 +86,15 @@
                     <ColumnDefinition Width="Auto" />
                 </Grid.ColumnDefinitions>
 
-                <!-- Path -->
-                <TextBox Grid.Column="0" x:Name="TxtPath" Tag="Location" Style="{StaticResource CustomTextBoxStyle}"
+                <!-- 路径 -->
+                <TextBox Grid.Column="0" x:Name="TxtPath" Tag="位置" Style="{StaticResource CustomTextBoxStyle}"
                          ContextMenu="{StaticResource TextBoxCustomContextMenu}"
-                         ToolTip="Path to open when the hotkeys are pressed. (folder, file, website, CLSID)" />
+                         ToolTip="按下热键时要打开的路径（文件夹、文件、网站、CLSID）" />
 
-                <!-- Delay -->
+                <!-- 延迟 -->
                 <StackPanel Grid.Column="1" Orientation="Horizontal" VerticalAlignment="Center" Margin="6"
-                            ToolTip="Delay in milliseconds before performing the action">
-                    <TextBlock Text="Delay" VerticalAlignment="Center" Margin="0,0,6,0" />
+                            ToolTip="执行操作前的延迟时间（毫秒）">
+                    <TextBlock Text="延迟" VerticalAlignment="Center" Margin="0,0,6,0" />
 
                     <controls:NumericInputControl x:Name="NDelay"
                                                   Margin="0"
@@ -106,13 +106,13 @@
                                                   StringFormat="{}{0:N0}" />
                 </StackPanel>
 
-                <!-- Handled -->
-                <ToggleButton Grid.Column="2" x:Name="CbHandled" Content="Handled" Style="{StaticResource ToggleButtonStyle}" Margin="5,0"
-                              ToolTip="Prevent further processing of the hotkeys in other applications" />
+                <!-- 已处理 -->
+                <ToggleButton Grid.Column="2" x:Name="CbHandled" Content="已处理" Style="{StaticResource ToggleButtonStyle}" Margin="5,0"
+                              ToolTip="阻止热键在其他应用程序中的进一步处理" />
 
-                <!-- Open as Tab -->
-                <ToggleButton Grid.Column="3" x:Name="CbOpenAsTab" Content="Tab" Style="{StaticResource ToggleButtonStyle}" Margin="5,0"
-                              ToolTip="Open as tab instead of a new window" />
+                <!-- 以标签页打开 -->
+                <ToggleButton Grid.Column="3" x:Name="CbOpenAsTab" Content="标签页" Style="{StaticResource ToggleButtonStyle}" Margin="5,0"
+                              ToolTip="以标签页形式打开，而不是新窗口" />
             </Grid>
         </Grid>
     </Border>

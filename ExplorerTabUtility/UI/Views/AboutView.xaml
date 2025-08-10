@@ -11,14 +11,14 @@
              Loaded="AboutView_Loaded">
 
     <UserControl.Resources>
-        <!-- Converters -->
+        <!-- 转换器 -->
         <converters:Base64ImageConverter x:Key="Base64ImageConverter" />
 
-        <!-- Easing Functions -->
+        <!-- 缓动函数 -->
         <CubicEase x:Key="EaseOutFunction" EasingMode="EaseOut" />
         <BackEase x:Key="EaseOutBack" EasingMode="EaseOut" Amplitude="0.5" />
 
-        <!-- Animations -->
+        <!-- 动画 -->
         <Storyboard x:Key="IconPulseAnimation">
             <DoubleAnimation
                 Storyboard.TargetProperty="(UIElement.RenderTransform).(ScaleTransform.ScaleX)"
@@ -144,7 +144,7 @@
                 EasingFunction="{StaticResource EaseOutFunction}" />
         </Storyboard>
 
-        <!-- Styles -->
+        <!-- 样式 -->
         <Style x:Key="AppTitleStyle" TargetType="TextBlock">
             <Setter Property="FontSize" Value="32" />
             <Setter Property="FontWeight" Value="Bold" />
@@ -342,11 +342,11 @@
         <ScrollViewer VerticalScrollBarVisibility="Auto">
             <Grid>
                 <Grid.RowDefinitions>
-                    <RowDefinition Height="Auto" /> <!-- Header -->
-                    <RowDefinition Height="*" /> <!-- Content -->
+                    <RowDefinition Height="Auto" /> <!-- 页眉 -->
+                    <RowDefinition Height="*" /> <!-- 内容 -->
                 </Grid.RowDefinitions>
 
-                <!-- Header Section with App Logo and Title -->
+                <!-- 页眉部分：应用Logo和标题 -->
                 <Border Grid.Row="0"
                         Background="{StaticResource CardGradientBrush}"
                         Padding="24,20">
@@ -379,7 +379,7 @@
                         </Border>
 
                         <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
-                            <TextBlock Text="Explorer Tab Utility"
+                            <TextBlock Text="资源管理器标签页工具"
                                        Style="{StaticResource AppTitleStyle}"
                                        MouseLeftButtonUp="OpenProjectPage">
                                 <TextBlock.Effect>
@@ -405,10 +405,18 @@
                                        VerticalAlignment="Bottom" />
                         </StackPanel>
 
-                        <TextBlock Text="Enhance your Windows File Explorer experience"
+                        <TextBlock Text="增强您的 Windows 文件资源管理器体验"
                                    Foreground="{StaticResource TextSecondaryBrush}"
                                    HorizontalAlignment="Center"
                                    Margin="0,0,0,4" />
+
+                        <!-- 汉化信息 -->
+                        <TextBlock Text="原作者: Abd-Alrahman Ghanem | 汉化: mclvlc (借助AI工具汉化)"
+                                   FontSize="11"
+                                   Foreground="{StaticResource TextSecondaryBrush}"
+                                   HorizontalAlignment="Center"
+                                   Margin="0,8,0,4"
+                                   Opacity="0.7" />
 
                         <Button x:Name="BtnGitHub"
                                 Style="{StaticResource GitHubButtonStyle}"
@@ -450,7 +458,7 @@
                                         <ScaleTransform ScaleX="1" ScaleY="1" />
                                     </TextBlock.RenderTransform>
                                 </TextBlock>
-                                <TextBlock Text="Star on GitHub"
+                                <TextBlock Text="在GitHub上点赞"
                                            FontWeight="SemiBold"
                                            VerticalAlignment="Center" />
                             </StackPanel>
@@ -458,20 +466,20 @@
                     </StackPanel>
                 </Border>
 
-                <!-- Main Content -->
+                <!-- 主要内容 -->
                 <Grid Grid.Row="1" Margin="24,24,24,40">
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="*" />
-                        <ColumnDefinition Width="24" /> <!-- Spacer -->
+                        <ColumnDefinition Width="24" /> <!-- 间距 -->
                         <ColumnDefinition Width="*" />
                     </Grid.ColumnDefinitions>
 
-                    <!-- Left Column: Support Options -->
+                    <!-- 左列：支持选项 -->
                     <StackPanel Grid.Column="0">
-                        <TextBlock Text="Support the Project"
+                        <TextBlock Text="支持项目"
                                    Style="{StaticResource SectionTitleStyle}" />
 
-                        <TextBlock Text="If you find this utility helpful, consider supporting its development through one of these options:"
+                        <TextBlock Text="如果您觉得这个工具很有用，请考虑通过以下方式之一支持其开发："
                                    TextWrapping="Wrap"
                                    Foreground="{StaticResource TextSecondaryBrush}"
                                    Height="42"
@@ -484,7 +492,7 @@
                                 <TextBlock Text="💖"
                                            Style="{StaticResource ColorfulEmojiStyle}"
                                            Foreground="#EA4AAA" />
-                                <TextBlock Text="GitHub Sponsors"
+                                <TextBlock Text="GitHub赞助者"
                                            FontSize="16"
                                            VerticalAlignment="Center" />
                             </StackPanel>
@@ -510,7 +518,7 @@
                                 <TextBlock Text="☕"
                                            Style="{StaticResource ColorfulEmojiStyle}"
                                            Foreground="#FFDD00" />
-                                <TextBlock Text="Buy Me A Coffee"
+                                <TextBlock Text="给我买杯咖啡"
                                            FontSize="16"
                                            VerticalAlignment="Center" />
                             </StackPanel>
@@ -532,7 +540,7 @@
                         <Border Margin="0,24,0,0" CornerRadius="8"
                                 Style="{StaticResource ProfileCardStyle}">
                             <StackPanel>
-                                <TextBlock Text="Developer"
+                                <TextBlock Text="开发者"
                                            FontWeight="SemiBold"
                                            FontSize="18"
                                            Foreground="{StaticResource TextPrimaryBrush}"
@@ -544,7 +552,7 @@
                                         <ColumnDefinition Width="*" />
                                     </Grid.ColumnDefinitions>
 
-                                    <!-- Developer Avatar -->
+                                    <!-- 开发者头像 -->
                                     <Border Margin="0,0,16,0"
                                             Style="{StaticResource SupporterAvatarStyle}"
                                             MouseLeftButtonUp="OpenDeveloperPage">
@@ -553,7 +561,7 @@
                                         </Border.Background>
                                     </Border>
 
-                                    <!-- Developer Info -->
+                                    <!-- 开发者信息 -->
                                     <StackPanel Grid.Column="1" VerticalAlignment="Center">
                                         <TextBlock Text="Abd-Alrahman Ghanem"
                                                    FontWeight="SemiBold"
@@ -589,12 +597,12 @@
                         </Border>
                     </StackPanel>
 
-                    <!-- Right Column: Supporters -->
+                    <!-- 右列：支持者 -->
                     <StackPanel Grid.Column="2">
-                        <TextBlock Text="Current Supporters"
+                        <TextBlock Text="当前支持者"
                                    Style="{StaticResource SectionTitleStyle}" />
 
-                        <TextBlock Text="Thank you to all the amazing people who support this project!"
+                        <TextBlock Text="感谢所有支持此项目的朋友们！"
                                    TextWrapping="Wrap"
                                    Foreground="{StaticResource TextSecondaryBrush}"
                                    Height="42"
@@ -631,13 +639,13 @@
                                                                                               Opacity="0.5" />
                                                                         </TextBlock.Effect>
                                                                     </TextBlock>
-                                                                    <TextBlock Text="Be the first to support this project!"
+                                                                    <TextBlock Text="成为第一个支持此项目的人！"
                                                                                TextWrapping="Wrap"
                                                                                FontSize="16"
                                                                                FontWeight="Medium"
                                                                                Foreground="{StaticResource TextSecondaryBrush}"
                                                                                HorizontalAlignment="Center" />
-                                                                    <TextBlock Text="Your support helps keep this project alive"
+                                                                    <TextBlock Text="您的支持有助于维持项目的持续发展"
                                                                                TextWrapping="Wrap"
                                                                                Margin="0,8,0,0"
                                                                                Foreground="{StaticResource TextSecondaryBrush}"

@@ -3,7 +3,7 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:local="clr-namespace:ExplorerTabUtility.UI.Views"
         xmlns:managers="clr-namespace:ExplorerTabUtility.Managers"
-        Title="Explorer Tab Utility"
+        Title="文件资源管理器标签工具"
         Width="850" Height="600"
         MinWidth="700" MinHeight="175"
         AllowsTransparency="True"
@@ -25,7 +25,7 @@
                 <RowDefinition Height="Auto" />
             </Grid.RowDefinitions>
 
-            <!-- Title Bar -->
+            <!-- 标题栏 -->
             <Border x:Name="TitleBar" Grid.Row="0" Background="{StaticResource TitleBarBrush}" CornerRadius="4, 4, 0, 0">
                 <Grid>
                     <Grid.ColumnDefinitions>
@@ -34,17 +34,17 @@
                         <ColumnDefinition Width="Auto" />
                     </Grid.ColumnDefinitions>
 
-                    <!-- Menu Button -->
+                    <!-- 菜单按钮 -->
                     <ToggleButton x:Name="DrawerButton" Grid.Column="0" Style="{StaticResource ToggleButtonIconStyle}" Margin="6,0,0,0"
-                                  Content="&#x2630;" Focusable="False" ToolTip="Open application menu" />
+                                  Content="&#x2630;" Focusable="False" ToolTip="打开应用菜单" />
 
-                    <!-- Window Title -->
-                    <TextBlock Grid.Column="1" Text="Explorer Tab Utility" VerticalAlignment="Center" Margin="8,0"
+                    <!-- 窗口标题 -->
+                    <TextBlock Grid.Column="1" Text="文件资源管理器标签工具" VerticalAlignment="Center" Margin="8,0"
                                Foreground="{StaticResource TextPrimaryBrush}"
                                FontWeight="SemiBold"
                                FontSize="14" />
 
-                    <!-- Window Controls -->
+                    <!-- 窗口控制按钮 -->
                     <StackPanel Grid.Column="2" Orientation="Horizontal" HorizontalAlignment="Right">
                         <Button x:Name="MinimizeButton" Style="{StaticResource IconButtonStyle}" Content="&#x2212;" Focusable="False" />
                         <Button x:Name="MaximizeButton" Focusable="False">
@@ -67,16 +67,16 @@
                 </Grid>
             </Border>
 
-            <!-- Main Content -->
+            <!-- 主内容区 -->
             <Grid Grid.Row="1">
-                <!-- Custom Drawer Implementation -->
+                <!-- 自定义抽屉菜单 -->
                 <Grid>
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="Auto" />
                         <ColumnDefinition Width="*" />
                     </Grid.ColumnDefinitions>
 
-                    <!-- Menu Drawer -->
+                    <!-- 菜单抽屉 -->
                     <Border Grid.Column="0"
                             Background="{StaticResource CardGradientBrush}"
                             BorderBrush="{StaticResource BorderGradientBrush}"
@@ -105,14 +105,14 @@
                                         <BeginStoryboard Storyboard="{StaticResource CloseDrawerStoryboard}"/>
                                     </EventTrigger>
                                 </ListBox.Triggers>
-                                <ListBoxItem ToolTip="Configure keyboard and mouse shortcuts">
-                                    <TextBlock Text="&#x1F5F2;  Shortcuts" VerticalAlignment="Center" />
+                                <ListBoxItem ToolTip="配置键盘和鼠标快捷键">
+                                    <TextBlock Text="&#x1F5F2;  快捷键" VerticalAlignment="Center" />
                                 </ListBoxItem>
-                                <ListBoxItem ToolTip="Configure application settings">
-                                    <TextBlock Text="&#xE713;  Preferences" VerticalAlignment="Center" />
+                                <ListBoxItem ToolTip="配置应用设置">
+                                    <TextBlock Text="&#xE713;  偏好设置" VerticalAlignment="Center" />
                                 </ListBoxItem>
-                                <ListBoxItem ToolTip="About the application and support options">
-                                    <TextBlock Text="&#xE939;  About" VerticalAlignment="Center" />
+                                <ListBoxItem ToolTip="关于应用和支持选项">
+                                    <TextBlock Text="&#xE939;  关于" VerticalAlignment="Center" />
                                 </ListBoxItem>
                             </ListBox>
                         </DockPanel>
@@ -156,44 +156,44 @@
                         </Border.Style>
                     </Border>
 
-                    <!-- Main Content -->
+                    <!-- 主内容 -->
                     <Grid Grid.Column="1">
-                        <!-- Tab Control -->
+                        <!-- 标签页控件 -->
                         <TabControl Style="{StaticResource CustomTabControlStyle}"
                                     SelectedIndex="{Binding SelectedIndex, ElementName=NavigationList}">
                             <TabControl.Effect>
                                 <DropShadowEffect ShadowDepth="1" BlurRadius="3" Opacity="0.2"
                                                   Color="{StaticResource ShadowColor}" />
                             </TabControl.Effect>
-                            <!-- Shortcuts Tab -->
-                            <TabItem Header="Shortcuts" Visibility="Collapsed">
+                            <!-- 快捷键标签页 -->
+                            <TabItem Header="快捷键" Visibility="Collapsed">
                                 <Grid>
                                     <Grid.RowDefinitions>
                                         <RowDefinition Height="Auto" />
                                         <RowDefinition Height="*" />
                                     </Grid.RowDefinitions>
 
-                                    <!-- Toolbar -->
+                                    <!-- 工具栏 -->
                                     <DockPanel Grid.Row="0" Margin="16,8" LastChildFill="False">
-                                        <!-- Action Buttons -->
+                                        <!-- 操作按钮 -->
                                         <StackPanel DockPanel.Dock="Left" Orientation="Horizontal">
-                                            <Button x:Name="BtnNewProfile" Content="NEW" Style="{StaticResource FlatButtonStyle}"
-                                                    ToolTip="Create a new profile" />
-                                            <Button x:Name="BtnImport" Content="IMPORT" Style="{StaticResource FlatButtonStyle}"
-                                                    ToolTip="Import profiles from a file" />
-                                            <Button x:Name="BtnExport" Content="EXPORT" Style="{StaticResource FlatButtonStyle}"
-                                                    ToolTip="Export profiles to a file" />
-                                            <Button x:Name="BtnSave" Content="SAVE" Style="{StaticResource FlatButtonStyle}"
-                                                    ToolTip="Persist all profile changes" />
+                                            <Button x:Name="BtnNewProfile" Content="新建" Style="{StaticResource FlatButtonStyle}"
+                                                    ToolTip="创建新配置文件" />
+                                            <Button x:Name="BtnImport" Content="导入" Style="{StaticResource FlatButtonStyle}"
+                                                    ToolTip="从文件导入配置文件" />
+                                            <Button x:Name="BtnExport" Content="导出" Style="{StaticResource FlatButtonStyle}"
+                                                    ToolTip="导出配置文件到文件" />
+                                            <Button x:Name="BtnSave" Content="保存" Style="{StaticResource FlatButtonStyle}"
+                                                    ToolTip="保存所有配置文件更改" />
                                         </StackPanel>
 
-                                        <!-- Save on Exit Toggle -->
+                                        <!-- 退出时自动保存选项 -->
                                         <CheckBox DockPanel.Dock="Right" x:Name="CbAutoSaveProfiles"
-                                                  Content="Auto save" Style="{StaticResource CustomCheckBoxStyle}"
-                                                  ToolTip="Automatically save profiles when closing the window" />
+                                                  Content="自动保存" Style="{StaticResource CustomCheckBoxStyle}"
+                                                  ToolTip="关闭窗口时自动保存配置文件" />
                                     </DockPanel>
 
-                                    <!-- Profiles Panel -->
+                                    <!-- 配置文件面板 -->
                                     <ScrollViewer Grid.Row="1" Margin="16,8,4,4"
                                                   VerticalScrollBarVisibility="Visible"
                                                   Style="{StaticResource CustomScrollViewerStyle}">
@@ -202,34 +202,35 @@
                                 </Grid>
                             </TabItem>
 
-                            <!-- Preferences Tab -->
-                            <TabItem Header="Preferences" Visibility="Collapsed">
+                            <!-- 偏好设置标签页 -->
+                            <TabItem Header="偏好设置" Visibility="Collapsed">
                                 <StackPanel Margin="16, 8">
-                                    <GroupBox Header="Application Settings"
+                                    <GroupBox Header="应用设置"
                                               Style="{StaticResource CustomGroupBoxStyle}">
                                         <StackPanel Margin="8">
-                                            <CheckBox x:Name="CbAutoUpdate" Content="Auto update"
+                                            <CheckBox x:Name="CbAutoUpdate" Content="自动更新"
                                                       Style="{StaticResource CustomCheckBoxStyle}"
-                                                      ToolTip="Automatically check for updates on startup" />
-                                            <CheckBox x:Name="CbThemeIssue" Content="I have theme issues"
+                                                      ToolTip="启动时自动检查更新" />
+                                            <CheckBox x:Name="CbThemeIssue" Content="我遇到主题问题"
                                                       Style="{StaticResource CustomCheckBoxStyle}"
-                                                      ToolTip="Use alternative window hiding method that preserves your custom File-Explorer theme.&#x0a;Enable this if you have theme-related issues" />
-                                            <CheckBox x:Name="CbSaveClosedHistory" Content="Save closed history"
+                                                      ToolTip="使用替代窗口隐藏方法以保留自定义文件资源管理器主题。
+启用此选项如果你遇到主题相关问题" />
+                                            <CheckBox x:Name="CbSaveClosedHistory" Content="保存关闭历史"
                                                       Style="{StaticResource CustomCheckBoxStyle}"
-                                                      ToolTip="Save closed windows history so you can reopen them later (ReopenClosed, Tab search)" />
-                                            <CheckBox x:Name="CbRestorePreviousWindows" Content="Restore previous windows"
+                                                      ToolTip="保存已关闭窗口历史记录，以便稍后重新打开（重新打开已关闭项、标签页搜索）" />
+                                            <CheckBox x:Name="CbRestorePreviousWindows" Content="恢复之前的窗口"
                                                       Style="{StaticResource CustomCheckBoxStyle}"
-                                                      ToolTip="Restore previously opened windows after restart or crash" />
-                                            <CheckBox x:Name="CbHideTrayIcon" Content="Hide tray icon"
+                                                      ToolTip="重启或崩溃后恢复之前打开的窗口" />
+                                            <CheckBox x:Name="CbHideTrayIcon" Content="隐藏托盘图标"
                                                       Style="{StaticResource CustomCheckBoxStyle}"
-                                                      ToolTip="Hide the system tray icon" />
+                                                      ToolTip="隐藏系统托盘图标" />
                                         </StackPanel>
                                     </GroupBox>
                                 </StackPanel>
                             </TabItem>
 
-                            <!-- About Tab -->
-                            <TabItem Header="About" Visibility="Collapsed">
+                            <!-- 关于标签页 -->
+                            <TabItem Header="关于" Visibility="Collapsed">
                                 <local:AboutView />
                             </TabItem>
                         </TabControl>
@@ -237,11 +238,11 @@
                 </Grid>
             </Grid>
 
-            <!-- Status Bar -->
+            <!-- 状态栏 -->
             <Border Grid.Row="2" Background="{StaticResource ControlBackgroundBrush}" BorderBrush="{StaticResource BorderBrush}"
                     BorderThickness="0,1,0,0" CornerRadius="0,0,4,4">
                 <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center"  Margin="8,4">
-                        <!-- Window Hook Status -->
+                        <!-- 窗口钩子状态 -->
                         <StackPanel Orientation="Horizontal" Margin="8,0">
                             <Ellipse Width="12" Height="12" Margin="0,0,6,0" StrokeThickness="1">
                                 <Ellipse.Style>
@@ -262,10 +263,10 @@
                                     </Style>
                                 </Ellipse.Style>
                             </Ellipse>
-                            <TextBlock Text="Window Hook" Foreground="{StaticResource TextSecondaryBrush}" VerticalAlignment="Center" />
+                            <TextBlock Text="窗口钩子" Foreground="{StaticResource TextSecondaryBrush}" VerticalAlignment="Center" />
                         </StackPanel>
 
-                        <!-- Reuse Tabs Status -->
+                        <!-- 复用标签页状态 -->
                         <StackPanel Orientation="Horizontal" Margin="8,0">
                             <Ellipse Width="12" Height="12" Margin="0,0,6,0" StrokeThickness="1">
                                 <Ellipse.Style>
@@ -286,10 +287,10 @@
                                     </Style>
                                 </Ellipse.Style>
                             </Ellipse>
-                            <TextBlock Text="Reuse Tabs" Foreground="{StaticResource TextSecondaryBrush}" VerticalAlignment="Center" />
+                            <TextBlock Text="复用标签页" Foreground="{StaticResource TextSecondaryBrush}" VerticalAlignment="Center" />
                         </StackPanel>
 
-                        <!-- Keyboard Hook Status -->
+                        <!-- 键盘钩子状态 -->
                         <StackPanel Orientation="Horizontal" Margin="8,0">
                             <Ellipse Width="12" Height="12" Margin="0,0,6,0" StrokeThickness="1">
                                 <Ellipse.Style>
@@ -310,10 +311,10 @@
                                     </Style>
                                 </Ellipse.Style>
                             </Ellipse>
-                            <TextBlock Text="Keyboard Hook" Foreground="{StaticResource TextSecondaryBrush}" VerticalAlignment="Center" />
+                            <TextBlock Text="键盘钩子" Foreground="{StaticResource TextSecondaryBrush}" VerticalAlignment="Center" />
                         </StackPanel>
 
-                        <!-- Mouse Hook Status -->
+                        <!-- 鼠标钩子状态 -->
                         <StackPanel Orientation="Horizontal" Margin="8,0">
                             <Ellipse Width="12" Height="12" Margin="0,0,6,0" StrokeThickness="1">
                                 <Ellipse.Style>
@@ -334,7 +335,7 @@
                                     </Style>
                                 </Ellipse.Style>
                             </Ellipse>
-                            <TextBlock Text="Mouse Hook" Foreground="{StaticResource TextSecondaryBrush}" VerticalAlignment="Center" />
+                            <TextBlock Text="鼠标钩子" Foreground="{StaticResource TextSecondaryBrush}" VerticalAlignment="Center" />
                         </StackPanel>
                     </StackPanel>
             </Border>

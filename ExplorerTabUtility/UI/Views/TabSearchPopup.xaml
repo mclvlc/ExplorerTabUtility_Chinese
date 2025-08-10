@@ -38,7 +38,7 @@
                                     <RowDefinition Height="Auto" />
                                 </Grid.RowDefinitions>
 
-                                <!-- Icon -->
+                                <!-- 图标 -->
                                 <TextBlock Grid.Row="0" Grid.Column="0" Grid.RowSpan="2"
                                            Text="&#xE2B4;"
                                            FontSize="22"
@@ -46,14 +46,14 @@
                                            VerticalAlignment="Center"
                                            Margin="0,0,12,0" />
 
-                                <!-- Folder Name -->
+                                <!-- 文件夹名称 -->
                                 <TextBlock Grid.Row="0" Grid.Column="1"
                                            Text="{Binding Name}"
                                            FontWeight="Normal"
                                            Foreground="{StaticResource TextAccentBrush}"
                                            TextTrimming="CharacterEllipsis" />
 
-                                <!-- Path -->
+                                <!-- 路径 -->
                                 <TextBlock Grid.Row="1" Grid.Column="1"
                                            Text="{Binding DisplayLocation}"
                                            FontSize="12"
@@ -91,18 +91,18 @@
 
         <Grid>
             <Grid.RowDefinitions>
-                <RowDefinition Height="Auto" />
-                <RowDefinition Height="*" />
+                <RowDefinition Height="Auto" /> <!-- 搜索栏 -->
+                <RowDefinition Height="*" />    <!-- 标签列表 -->
             </Grid.RowDefinitions>
 
-            <!-- Search Row -->
+            <!-- 搜索行 -->
             <Grid Grid.Row="0" Margin="15">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="*"/>
                     <ColumnDefinition Width="Auto"/>
                 </Grid.ColumnDefinitions>
 
-                <!-- Search Box -->
+                <!-- 搜索框 -->
                 <Border Grid.Column="0"
                         Background="{StaticResource ControlBackgroundBrush}"
                         BorderBrush="{StaticResource BorderBrush}"
@@ -110,8 +110,8 @@
                         CornerRadius="4">
                     <Grid>
                         <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="Auto" />
-                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="Auto" /> <!-- 搜索图标 -->
+                            <ColumnDefinition Width="*" />    <!-- 输入框 -->
                         </Grid.ColumnDefinitions>
 
                         <TextBlock Grid.Column="0"
@@ -137,8 +137,8 @@
                     </Grid>
                 </Border>
 
-                <!-- Clear Button -->
-                <Button Grid.Column="1" ToolTip="Clear closed windows history"
+                <!-- 清除按钮 -->
+                <Button Grid.Column="1" ToolTip="清除已关闭窗口的历史记录"
                         Margin="5,0,0,0"
                         Focusable="False"
                         Width="40" Height="Auto"
@@ -156,7 +156,7 @@
                 </Button>
             </Grid>
 
-            <!-- Tab List -->
+            <!-- 标签列表 -->
             <ListView x:Name="TabsList"
                       Grid.Row="1"
                       Margin="15,0, 3, 15"

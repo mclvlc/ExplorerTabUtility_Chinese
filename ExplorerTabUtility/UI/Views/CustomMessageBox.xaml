@@ -11,7 +11,7 @@
         Topmost="True">
 
     <Window.Resources>
-        <!-- Custom MessageBox Button Style -->
+        <!-- 自定义消息框按钮样式 -->
         <Style TargetType="Button">
             <Setter Property="MinWidth" Value="80" />
             <Setter Property="MinHeight" Value="30" />
@@ -76,12 +76,12 @@
         </Border.Effect>
         <Grid>
             <Grid.RowDefinitions>
-                <RowDefinition Height="Auto" />
-                <RowDefinition Height="*" />
-                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" /> <!-- 标题栏 -->
+                <RowDefinition Height="*" />    <!-- 内容区 -->
+                <RowDefinition Height="Auto" /> <!-- 按钮区 -->
             </Grid.RowDefinitions>
 
-            <!-- Title Bar -->
+            <!-- 标题栏 -->
             <Border Grid.Row="0"
                     Background="{StaticResource TitleBarBrush}"
                     CornerRadius="8,8,0,0"
@@ -95,14 +95,14 @@
                            Margin="10" />
             </Border>
 
-            <!-- Content Area -->
+            <!-- 内容区域 -->
             <Grid Grid.Row="1" Margin="20">
                 <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="Auto" />
-                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="Auto" /> <!-- 图标列 -->
+                    <ColumnDefinition Width="*" />    <!-- 消息列 -->
                 </Grid.ColumnDefinitions>
 
-                <!-- Icon -->
+                <!-- 图标 -->
                 <Path x:Name="IconPath"
                       Width="32"
                       Height="32"
@@ -112,7 +112,7 @@
                       HorizontalAlignment="Center"
                       Visibility="Collapsed" />
 
-                <!-- Message -->
+                <!-- 消息文本 -->
                 <TextBlock Grid.Column="1"
                            x:Name="MessageText"
                            Foreground="{StaticResource TextPrimaryBrush}"
@@ -122,7 +122,7 @@
                            VerticalAlignment="Center" />
             </Grid>
 
-            <!-- Button Area -->
+            <!-- 按钮区域 -->
             <Border Grid.Row="2"
                     Background="#22000000"
                     CornerRadius="0,0,8,8"
